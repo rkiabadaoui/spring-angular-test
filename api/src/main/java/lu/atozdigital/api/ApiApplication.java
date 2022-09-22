@@ -26,4 +26,20 @@ public class ApiApplication {
 
 	@Autowired
 	private ArticleService articleService;
+
+@Bean
+	CommandLineRunner run() {
+		return args -> {
+
+			Article article = new Article(null,"Rkia",100,"BADAOUI",null);
+			articleService.saveArticle(article);
+			List<Article> articles = new ArrayList<>();
+			articles.add(article);
+			Ordre order = new Ordre(null,null, null);
+			orderService.saveOrder(order);
+			Article article_1 = new Article(null,"Rkia",100,"BADAOUI",order);
+			articleService.saveArticle(article_1);
+
+		};
+	}
 }
