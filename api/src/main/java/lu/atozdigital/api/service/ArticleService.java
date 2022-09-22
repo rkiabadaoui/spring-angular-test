@@ -24,4 +24,8 @@ public class ArticleService {
         return article;
     }
 
+    public Iterable<Article> getArticles() {
+        return articleRepository.findAll();
+    }
+
 }

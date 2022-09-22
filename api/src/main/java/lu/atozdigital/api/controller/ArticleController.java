@@ -27,4 +27,10 @@ public class ArticleController {
         Optional<Article> article = articleService.getArticle(id);
         return ResponseEntity.ok(article);
     }
+
+    @GetMapping("/articles")
+    public Iterable<Article> getArticles() {
+        return articleService.getArticles();
+
+    }
 }
