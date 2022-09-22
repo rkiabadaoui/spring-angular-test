@@ -7,6 +7,7 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import java.util.List;
+import java.util.Date;
 
 @Getter
 @Setter
@@ -19,6 +20,9 @@ public class Ordre {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @CreationTimestamp
+    private Date date;
 
     @OneToMany( cascade=CascadeType.ALL)
     private List<Article> articles;

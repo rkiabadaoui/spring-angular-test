@@ -18,6 +18,11 @@ public class OrderController {
     public Iterable<Ordre> getOrders() {
 
         return orderService.getOrders();
+    }
 
+    @PostMapping("/order_1")
+    public Ordre saveOrder(@RequestBody Ordre order)
+    {
+        return orderService.saveOrder(order);
     }
 }
